@@ -1,0 +1,52 @@
+<div class="bar-top">
+    <h1><span translate>welcome</span>, {{admin.username}}</h1>
+    <a class="sidebar-close" ng-click="admin.showAdminPanel=false;admin.active=false;"><i class="fa fa-times"></i></a>
+</div>
+<div class="bar--actions">
+    <button ng-click="admin.sidebar='core/html/profile.html';showAdminPanel=true" translate>edit_profile</button>
+    <button ng-click="logout()" translate>log_out</button>
+</div>
+<div class="new-message--cosmo" ng-show="admin.displayMessage">
+    <p class="message" ng-bind-html="admin.message"></p>
+    <a class="hide" ng-click="removeMessage()">Hide</a>
+</div>
+<ul>
+    <li ng-show="admin.roleNum<=3" ng-class="{active: active=='content'}" ng-click="contentDropdown=!contentDropdown">
+        <a translate>sidebar_content</a>
+        <ul ng-show="contentDropdown">
+            <li ng-click="admin.sidebar='core/html/page.html';active='content';showAdminPanel=true;navigate()">
+                <a translate>sidebar_new_page</a>
+            </li>
+            <li ng-click="showAdminPanel=true;admin.sidebar='core/html/content-list.html';active='content';">
+                <a translate>sidebar_browse</a>
+            </li>
+            <li ng-click="showAdminPanel=true;admin.sidebar='core/html/page.html';active='content'">
+                <a translate>sidebar_edit_page</a>
+            </li>
+            <li ng-click="admin.sidebar='core/html/revisions.html';active='content';showAdminPanel=true;">
+                <a translate>revisions</a>
+            </li>
+            <li ng-click="admin.sidebar='core/html/files.html';active='content';showAdminPanel=true;">
+                <a translate>files_media</a>
+            </li>
+        </ul>
+    </li>
+    <li ng-show="admin.roleNum==1" ng-class="{active: active=='menus'}" ng-click="admin.sidebar='core/html/menu.html';active='menus';showAdminPanel=true">
+        <a translate>menus</a>
+    </li>
+    <li ng-show="admin.roleNum==1" ng-class="{active: active=='blocks'}" ng-click="admin.sidebar='core/html/blocks.html';active='blocks';showAdminPanel=true">
+        <a translate>blocks</a>
+    </li>
+    <li ng-show="admin.roleNum==1" ng-class="{active: active=='theme'}" ng-click="admin.sidebar='core/html/theme.html';active='theme';showAdminPanel=true">
+        <a translate>theme</a>
+    </li>
+    <li ng-show="admin.roleNum==1" ng-class="{active: active=='users'}" ng-click="clearPage();admin.sidebar='core/html/users.html';active='users';showAdminPanel=true">
+        <a translate>users</a>
+    </li>
+    <li ng-show="admin.roleNum==1" ng-class="{active: active=='modules'}" ng-click="admin.sidebar='core/html/modules.html';active='modules';showAdminPanel=true">
+        <a translate>modules</a>
+    </li>
+    <li ng-show="admin.roleNum==1" ng-class="{active: active=='settings'}" ng-click="admin.sidebar='core/html/settings.html';active='settings';showAdminPanel=true">
+        <a translate>settings</a>
+    </li>
+</ul>

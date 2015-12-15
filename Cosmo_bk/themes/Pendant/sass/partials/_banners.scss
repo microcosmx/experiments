@@ -1,0 +1,76 @@
+.banner--lrg {
+    background: center center no-repeat;
+    background-size: cover;
+    flex: $col-twelve;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transition: .15s ease;
+
+    @media #{$bp-delta} {
+        height: 70vh;
+    }
+
+    h1, h3, h4 {
+        color: palette(gray, light);
+    }
+
+    .article--title {
+        border: 0;
+        max-width: 68.75rem;
+        padding: 0 size(20);
+        text-align: center;
+    }
+
+    .meta {
+        color: palette(gray, white);
+        margin-bottom: 0;
+    }
+}
+
+.banner--sml {
+    @extend .banner--lrg;
+    height: 70vh;
+    margin: 0 auto;
+
+    @media #{$bp-delta} {
+        height: 50vh;
+    }
+}
+
+.banner--title {
+    flex: $col-twelve;
+    bottom: 1rem;
+    padding: 1.5rem 4%;
+    position: absolute;
+
+    @media #{$bp-epsilon} {
+        flex: 5;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    h1 {
+        color: palette(gray, white);
+    }
+
+    p {
+        display: none;
+
+        @media #{$bp-beta} {
+            color: palette(gray, white);
+            display: block;
+            font-size: 2rem;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.tags {
+    display: inline-block;
+    border: 1px solid palette(gray, mid--light);
+    border-radius: size(15);
+    font-family: $font-alpha;
+    padding: size(5) size(15);
+}

@@ -1,0 +1,71 @@
+{
+    "name": "Pendant",
+    "module": "pendant",
+    "css": [
+        "css/style.minify.css",
+        "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800",
+        "http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+    ],
+    "classes": [
+        "img--lrg"
+    ],
+    "directives": [
+        {
+            "name": "Single Row Post",
+            "directive": "one-post",
+            "description": "Tag you want to pull from:"
+        },
+        {
+            "name": "Left Row",
+            "directive": "row-left",
+            "description": "Tag you want to pull from:"
+        },
+        {
+            "name": "Right Row",
+            "directive": "row-right",
+            "description": "Tag you want to pull from:"
+        },
+        {
+            "name": "3 Posts, Text Below",
+            "directive": "three-posts",
+            "description": "Tag you want to pull from:"
+        },
+        {
+            "name": "3 Post, Block Format",
+            "directive": "three-block",
+            "description": "Tag you want to pull from:"
+        },
+        {
+            "name": "3 Posts, text Inside",
+            "directive": "three-uniform",
+            "description": "Tag you want to pull from:"
+        },
+        {
+            "name": "Small Left Image",
+            "directive": "caption-left-small"
+        },
+        {
+            "name": "Small Right Image",
+            "directive": "caption-right-small"
+        },
+        {
+            "name": "Med Left Image",
+            "directive": "caption-left-medium"
+        },
+        {
+            "name": "Med Right Image",
+            "directive": "caption-right-medium"
+        }
+    ],
+    "pages": [
+        "post.html",
+        "post-alt.html",
+        "blog-alt-2.html",
+        "home.html",
+        "home-alt.html"
+    ],
+    "scripts": [
+        "js/pendant.minify.js"
+    ],
+    "version": "1.0.0"
+}

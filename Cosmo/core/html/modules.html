@@ -1,0 +1,22 @@
+<div class='cosmo-default' ng-controller="moduleCtrl">
+    <div class="bar-top">
+        <a ng-show="!settingsFile" ng-click="admin.sidebar='core/html/sidebar.html';active=''"><i class="fa fa-angle-left"></i></a>
+        <i class="fa fa-angle-left" ng-show="settingsFile" ng-click="settingsFile=''"></i>
+        <h1 translate>Module<!--<span ng-show="!settingsFile">manager</span><span ng-show="settingsFile">settings</span> --></h1>
+        <a class="sidebar-close" ng-click="admin.showAdminPanel=false;admin.active=false;"><i class="fa fa-times"></i></a>
+    </div>
+    <ul ng-repeat="module in modules" ng-if="!settingsFile">
+        <li ng-class="{active: module.active=='Y'}" ng-if="module.module">
+            <p class="mod-name">{{module.name}}</p>
+            <button  ng-if="module.settings" ng-click="goToSettings(module.folder,module.settings)" translate="settings"></button>
+            <button  ng-if="module.status=='uninstalled'" ng-click="install(module.folder, $index)" translate="install"></button>
+            <button  ng-if="module.status=='inactive'" ng-click="activate(module.id, $index)" translate="activate"></button>
+            <button  ng-if="module.status=='active'" ng-click="deactivate(module.id, $index)" translate="deactivate"></button>
+            <button  ng-if="module.status=='inactive'" ng-click="uninstall(module.id, $index)" translate="uninstall"></button>
+            <p ng-if="module.description">
+                {{module.description}}
+            </p>
+        </li>
+    </ul>
+    <div ng-include="settingsFile"></div>
+</div>

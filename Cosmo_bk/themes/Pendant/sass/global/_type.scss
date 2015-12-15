@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300italic,300,400italic,700,700italic);
+$font-alpha: 'Open Sans', sans-serif;
+$font-beta: 'Merriweather', serif;
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        @content;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+code {
+    background-color: palette(gray, light);
+    border-radius: size(5);
+    color: palette(gray, mid);
+    display: block;
+    padding: size(10);
+}
+
+h1 {
+    font-family: $font-alpha;
+    font-size: 2rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+
+    @media #{$bp-beta} {
+        font-size: 2.75rem;
+    }
+
+    @media #{$bp-gamma} {
+        font-size: 3.5rem;
+    }
+}
+
+h2 {
+    font-family: $font-alpha;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    @media #{$bp-beta} {
+        font-size: 1.8rem;
+    }
+}
+
+h3 {
+    font-family: $font-alpha;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+
+    @media #{$bp-beta} {
+        font-size: 1.6rem;
+    }
+}
+
+h4 {
+    font-family: $font-alpha;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    @media #{$bp-beta} {
+        font-size: 1.4rem;
+    }
+}
+
+h5 {
+    font-family: $font-alpha;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+    @media #{$bp-beta} {
+        font-size: 1.2rem;
+    }
+}
+
+h6 {
+    font-family: $font-alpha;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    @media #{$bp-beta} {
+        font-size: 1.1rem;
+    }
+}
+
+p {
+    font-family: $font-alpha;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+
+    @media #{$bp-gamma} {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+blockquote {
+    color: palette(gray, mid);
+    font-family: $font-beta;
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.5;
+    margin: size(25) 1.5rem;
+
+    @media #{$bp-beta} {
+        float: right;
+        max-width: 35%;
+    }
+}
+
+small {
+    font-size: 85%;
+}
+
+a, button {
+    outline: none;
+}
+
+button {
+    border: 0;
+}
+
+a {
+    color: palette(gray, dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: .15s ease-in;
+
+    &:active, &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: palette(gray, mid);
+        cursor: pointer;
+    }
+}
+
+input {
+    font-family: $font-alpha;
+    font-weight: 200;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+::selection {
+       background-color: palette(gray, light);
+}

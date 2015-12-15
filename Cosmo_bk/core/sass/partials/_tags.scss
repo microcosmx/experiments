@@ -1,0 +1,12 @@
+// tag styling when editing or creating new pages
+.tag-suggestions {
+    overflow-x: scroll;
+
+    a {
+        @extend %radio-check;
+
+        &:hover {
+            margin-bottom: 1rem;
+        }
+    }
+}

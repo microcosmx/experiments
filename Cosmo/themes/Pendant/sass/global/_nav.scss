@@ -1,0 +1,169 @@
+%sidebar {
+    background-color: palette(gray, white);
+    height: 0;
+    overflow: scroll;
+    position: fixed;
+    right: -100%;
+    transition: right .25s ease-in;
+    width: 100%;
+}
+
+/* overall sidebar for all comments/nav etc...*/
+.sidebar {
+    background-color: palette(gray, white);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: .25s ease-in;
+    width: 70%;
+    z-index: z(sidebar);
+
+    @media #{$bp-beta} {
+        width: 35%;
+    }
+
+    @media #{$bp-delta} {
+        transition: .45s ease-in;
+    }
+
+    i {
+        color: palette(gray, dark);
+        transition: .15s ease-in;
+
+        &:hover {
+            color: palette(gray, mid);
+        }
+    }
+
+    .ng-hide {
+        opacity: 0;
+    }
+
+    .ng-hide-add.ng-hide-add-active, .ng-hide-remove.ng-hide-remove-active {
+        transition: .05s ease-in;
+    }
+
+    nav {
+        @extend %sidebar;
+    }
+
+    nav.show-right {
+        height: auto;
+        position: absolute;
+        right: 0;
+        top: 4rem;
+    }
+}
+
+.sidebar.show-right {
+    height: 100%;
+    position: fixed;
+}
+
+/* top nav for search, closing sidebar etc.. */
+.nav-options {
+    background-color: palette(gray, white);
+    height: 4rem;
+    padding: 1.25rem;
+
+    .selections {
+        display: inline-block;
+        float: right;
+
+        .close {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+/* overall nav for pendant */
+.sidebar ul {
+    font-size: 1rem;
+    margin: 0;
+    padding-left: size(20);
+
+    li {
+        color: palette(gray, mid--light);
+        list-style: none;
+        margin-bottom: 0;
+
+        a {
+            color: palette(gray, dark);
+            display: block;
+            font-size: .9rem;
+            font-weight: 400;
+            letter-spacing: .02rem;
+            line-height: 2.5rem;
+            transition: .25s ease;
+
+            &:hover {
+                color: palette(gray, mid);
+            }
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+/* subnav styling for pendant */
+.sidebar ul li {
+
+    ul {
+        font-size: 1rem;
+        margin-left: - size(20);
+        padding: 0;
+        transition: .15s ease-in;
+
+
+        li {
+            color: palette(gray, mid--light);
+            list-style: none;
+            padding-left: size(20) * 2;
+            transition: .15s ease-in;
+
+            a {
+                color: palette(gray, mid);
+                font-size: .9rem;
+
+                &:hover {
+                    color: palette(gray, dark);
+                }
+            }
+        }
+    }
+
+    ul.show {
+        display: block;
+    }
+
+    ul li ul.show-child {
+        display: block;
+    }
+}
+
+footer {
+    color: palette(gray, mid);
+    font-size: .85rem;
+
+    p {
+        display: block;
+        font-size: .8rem;
+
+        @media #{$bp-beta} {
+            display: inline-block;
+        }
+    }
+
+    .cosmo-logo {
+        display: inline-block;
+        height: 33px;
+        margin-left: -7px;
+        vertical-align: middle;
+        width: auto;
+    }
+}

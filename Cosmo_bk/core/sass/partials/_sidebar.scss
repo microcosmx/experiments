@@ -1,0 +1,178 @@
+// sidebar for all of cosmo editing outside of the live editing done on page
+.sidebar {
+    background-color: palette(gray, white);
+    bottom: 0;
+    height: 100%;
+    left: -20rem;
+    margin-top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    transition: left .3s ease;
+    width: 20rem;
+    z-index: z(sidebar);
+
+    @media #{$bp-alpha} {
+        left: -30rem;
+        width: 30rem;
+    }
+}
+
+// Sidebar transition to reveal sidebar from the left side of the screen.
+//NEED TO CHANGE
+.adminSidebarSlideOut {
+    left: 0;
+}
+
+
+// active hamburger navigation before you open the sidebar
+.hamburger {
+    height: 5rem;
+    position: fixed;
+    width: 5rem;
+    z-index: z(hamburger);
+
+    .hamburger {
+        background-color: transparent;
+        left: 0;
+        outline: none;
+        opacity: .5;
+        padding: size(15);
+        transition: opacity .15s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        svg {
+            height: 2.5rem;
+            vertical-align: middle;
+            width: 2.5rem;
+        }
+    }
+}
+
+// bar to be used at the top of each area of the sidebar
+.bar-top {
+    align-items: center;
+    background-color: palette(blue, mid);
+    display: flex;
+    height: 4.5rem;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 1.5rem;
+    width: 17rem;
+
+    @media #{$bp-alpha} {
+        width: 27rem;
+    }
+
+    a {
+        color: palette(gray, light);
+        font-size: 1.75rem;
+        text-transform: uppercase;
+
+        &:hover {
+            color: palette(blue, light);
+        }
+    }
+
+    .active {
+        color: palette(alert, warning);
+    }
+
+    a.sidebar-close {
+        font-size: 1.15rem;
+        text-align: right;
+    }
+}
+
+// case to adjust sides within the sidebar
+.form-case {
+    padding: size(25);
+}
+
+// similar to .form-case, but with a border at the bottom
+.form-case--border {
+    @extend .form-case;
+    border-bottom: 1px solid palette(gray, mid--light);
+}
+
+.new-message--cosmo {
+    background-color: palette(blue, dark);
+    color: palette(gray, light);
+    display: flex;
+    padding: size(10) size(25);
+
+    .message {
+        display: inline-block;
+        flex: 11;
+        font-weight: 400;
+        margin: 0;
+
+        a {
+            color: palette(blue, light);
+            font-weight: 400;
+            transition: color .2s;
+
+            &:hover {
+                color: palette(gray, white);
+            }
+        }
+    }
+
+    a.hide {
+        color: white;
+        font-size: .75rem;
+        flex: 1;
+        line-height: 2;
+        text-align: right;
+    }
+}
+
+.bar--actions {
+    background-color: palette(blue, dark);
+    color: palette(gray, white);
+    display: flex;
+    text-align: center;
+
+    button {
+        flex: 1;
+        margin: 0;
+        padding: 1rem 0;
+    }
+
+    p {
+        flex: 2;
+        margin-left: 1.5rem;
+        margin-top: 0.5rem;
+        text-align: left;
+    }
+}
+
+// alert when a newer version of the page has been saved
+.new-version {
+    background-color: palette(blue, mid);
+    position: fixed;
+    width: 17rem;
+    z-index: z(sidebar);
+
+    @media #{$bp-alpha} {
+        width: 27rem;
+    }
+
+    p {
+        color: palette(gray, white);
+    }
+
+    button {
+        background-color: transparent;
+        margin: 0;
+        padding: 1rem 1.25rem;
+
+        &:hover {
+            background-color: palette(blue, light);
+        }
+    }
+}

@@ -1,0 +1,130 @@
+// search styling for the container on the search area
+.pen-search {
+    background-color: palette(gray, white);
+    border: 0;
+    flex: 2;
+    transition: .3s ease;
+
+    &:focus {
+        position: relative;
+        z-index: z-layer(modal);
+    }
+
+    form {
+        display: inline-block;
+        transition: 2s;
+        width: 100%;
+
+        &:before {
+            color: palette(gray, mid--light);
+            content: "\f002";
+            font-family: 'FontAwesome';
+            font-size: 1rem;
+        }
+    }
+
+    .search-results {
+        background-color: palette(gray, white);
+        height: auto;
+        left: 0;
+        overflow-y: scroll;
+        padding-top: size(30);
+        position: fixed;
+        right: 0;
+        width: 100%;
+    }
+
+    input {
+        background-color: transparent;
+        border: 0;
+        border-radius: 5rem;
+        color: palette(gray, dark);
+        font-size: 1rem;
+        font-weight: 700;
+        height: 2.5rem;
+        margin-top: 0;
+        transition: .25s ease-in;
+        width: 70%;
+
+        @media #{$bp-beta} {
+            width: 35%;
+        }
+
+        @include placeholder {
+            color: palette(gray, mid--light);
+            height: 4rem;
+            opacity: 1;
+            text-transform: uppercase;
+            transition: .2s ease-in;
+        }
+
+        &:focus {
+            background-color: palette(gray, light);
+            padding-left: size(15);
+            position: relative;
+            width: 85%;
+
+            @include placeholder {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+// text info for articles in search
+.search-results--article {
+    cursor: pointer;
+    display: flex;
+    height: auto;
+    padding: size(20) 0;
+
+    @media #{$bp-gamma} {
+        padding: size(20);
+    }
+
+    article {
+        flex: 5;
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: .35rem;
+        margin-top: 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 200;
+        margin-top: 0;
+    }
+
+    p {
+        font-size: .8rem;
+    }
+
+    .image {
+        display: none;
+
+        @media #{$bp-beta} {
+            display: block;
+            flex: 1;
+            height: auto;
+            margin-right: size(30);
+            min-width: 12rem;
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .tags {
+        display: none;
+
+        @media #{$bp-beta} {
+            display: inline-block;
+        }
+    }
+}

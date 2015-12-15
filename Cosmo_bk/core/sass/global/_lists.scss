@@ -1,0 +1,105 @@
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        overflow: hidden;
+        padding: 1rem size(25);
+        text-overflow: ellipsis;
+
+        &:hover {
+            background-color: palette(gray, light);
+
+            a {
+                color: palette(blue, mid);
+            }
+
+            input, .cos-select {
+                background-color: palette(gray, white);
+            }
+        }
+
+        a {
+            color: palette(blue, mid);
+            display: block;
+            font-weight: 200;
+            letter-spacing: .03rem;
+        }
+
+        button {
+            background-color: palette(blue, dark);
+            color: palette(gray, white);
+            margin: 0;
+            padding: 1rem 1.25rem;
+
+            &:hover {
+                background-color: palette(blue, light);
+                color: palette(gray, white);
+            }
+        }
+
+        p {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        .active {
+            background-color: palette(blue, mid);
+            color: palette(blue, light);
+        }
+
+        .cos-select-half {
+            margin-bottom: 0;
+        }
+
+
+        //NEED TO CHANGE
+        small {
+
+            i {
+                margin-right: size(5);
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+ul li ul {
+    background-color: palette(gray, xlight);
+    margin-left: -2.5rem;
+    width: 130%;
+
+    @media #{$bp-beta} {
+        width: 31rem;
+    }
+
+    li {
+        padding-left: 3.75rem;
+
+        &:first-child {
+            margin-top: 1rem;
+        }
+
+        &:hover {
+            background-color: palette(blue, light);
+
+            a {
+                color: palette(gray, xlight);
+            }
+        }
+
+        &:last-child {
+          margin-bottom: -1rem;
+        }
+
+        a {
+            font-size: .95rem;
+        }
+    }
+}

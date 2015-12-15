@@ -1,0 +1,31 @@
+<div class="profile" ng-controller="profileCtrl">
+    <div class="bar-top">
+        <a ng-click="admin.sidebar='core/html/sidebar.html';active=''"><i class="fa fa-angle-left"></i></a>
+        <h1 translate="profile_header"></h1>
+        <a class="sidebar-close" ng-click="admin.showAdminPanel=false;admin.active=false;"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="bar--actions">
+        <button  ng-click="updateProfile()" translate="save"></button>
+    </div>
+    <div class="form-case">
+        <label for="name" translate="name"></label>
+        <input id="name" ng-model="profile.name">
+
+        <label for="email" translate="email"></label>
+        <input id="email" ng-model="profile.email">
+
+        <label for="facebook" translate="facebook"></label>
+        <input id="facebook" ng-model="profile.facebook">
+
+        <label for="twitter" translate="twitter"></label>
+        <input id="twitter" ng-model="profile.twitter">
+
+        <label for="bio" translate="bio"></label>
+        <textarea id="bio" ng-model="profile.bio"></textarea>
+
+        <div class="half-width">
+            <label for="photo" translate="profile_photo"></label>
+            <img ng-src="{{profile.photo}}" ng-click="addProfilePhoto()">
+        </div>
+    </div>
+</div>

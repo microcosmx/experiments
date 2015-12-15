@@ -1,0 +1,22 @@
+<div ng-controller="revisionsCtrl">
+    <div class="bar-top">
+        <a ng-click="admin.sidebar='core/html/sidebar.html';active=''"><i class="fa fa-angle-left"></i></a>
+        <h1 translate="revisions"></h1>
+        <a class="sidebar-close" ng-click="admin.showAdminPanel=false;admin.active=false;"><i class="fa fa-times"></i></a>
+    </div>
+    <ul ng-repeat="revision in revisions">
+        <li class="revisions">
+            <a class="content-title" ng-click="getRevision($index)">
+                <div>
+                    <p>
+                        <strong translate>title:</strong> {{revision.title || 'N/A'}}
+                    </p>
+                </div>
+            </a>
+            <p class="info" alt="author">{{revision.author}}</p>
+            <p class="info" alt="published">{{revision.published}}</p>
+            <p class="info" alt="published date">{{revision.timestamp | timestamp}}</p>
+            <button ng-click="revert($index)" translate="revert"></button>
+        </li>
+    </ul>
+</div>

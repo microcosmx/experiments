@@ -1,0 +1,117 @@
+%bg-img {
+    background: center center no-repeat;
+    background-size: cover;
+}
+
+/* general image styling to be applied on inserting of the image */
+
+.img--xsml {
+    width: 100%;
+
+    @media #{$bp-beta} {
+        width: 20%;
+    }
+}
+
+.img--sml {
+    width: 100%;
+
+    @media #{$bp-beta} {
+        width: 28%;
+    }
+}
+
+.img--med {
+    width: 100%;
+
+    @media #{$bp-beta} {
+        width: 35%;
+    }
+}
+
+.img--lrg {
+    margin-bottom: size(15);
+    margin-left: 0;
+    transition: .5s ease;
+    width: 100%;
+
+    @media #{$bp-gamma} {
+        width: 70%;
+    }
+}
+
+.img--round {
+    border-radius: 2rem;
+}
+
+.img--half-round {
+    border-radius: 2rem 0 2rem 0;
+}
+
+.img--circle {
+    border-radius: 100%;
+}
+
+.img--left {
+    float: left;
+    margin: .5rem 1.5rem 1.5rem 0;
+    transition: .5s ease;
+
+    @media #{$bp-epsilon} {
+        margin-left: -5%;
+    }
+}
+
+.img--right {
+    float: right;
+    margin: .5rem 0 1.5rem 1.5rem;
+    transition: .5s ease;
+
+    @media #{$bp-epsilon} {
+        margin-right: -5%;
+    }
+}
+
+/* captions styling! Exciting right?! */
+
+.caption {
+    color: palette(gray, mid);
+    font-family: $font-beta;
+    font-size: .9rem;
+    font-style: italic;
+    margin: .5rem 0 1rem 0;
+    text-align: center;
+}
+
+// general gallery styling
+
+.cs-gallery {
+    margin: size(30) 0;
+    transition: .15s;
+
+    img {
+        margin: .125rem 0;
+        transition: .5s ease;
+        vertical-align: top;
+        width: 100%;
+
+        @media #{$bp-beta} {
+            display: inline-block;
+            margin: 0;
+            width: 50%;
+
+            &:nth-child(3n+1) {
+                padding-right: .063rem;
+            }
+
+            &:nth-child(3n+2) {
+                padding-left: .063rem;
+            }
+
+            &:nth-child(3n+3) {
+                padding: .125rem 0;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,227 @@
+// setup easy margin/padding sass-map
+$size: (
+    5: .313rem,
+    10: .625rem,
+    15: .938rem,
+    20: 1.25rem,
+    25: 1.563rem,
+    30: 1.875rem,
+);
+
+@function size($dimension) {
+  @if map-has-key($size, $dimension) {
+    @return map-get($size, $dimension);
+  }
+
+  @return null;
+}
+
+
+.half-width {
+    width: 100%;
+
+    @media #{$bp-beta} {
+        display: inline-block;
+        vertical-align: top;
+        width: 48.98%;
+
+        &:nth-child(odd) {
+            margin-right: 1%;
+        }
+    }
+}
+
+
+// search styling for the container on the search area
+.cos-comments {
+    height: auto;
+    width: 100%;
+
+    .unread {
+        border-right: 10px solid palette(gray, mid--light);
+        transition: .25s ease-in;
+    }
+}
+
+.cos-comments .reply {
+    background-color: palette(gray, white);
+    padding-bottom: size(20);
+    transition: right .25s ease-in;
+    width: 100%;
+
+    a {
+        background-color: palette(gray, dark);
+        border: 1px solid palette(gray, mid--light);
+        color: palette(gray, light);
+        font-size: .9rem;
+        padding: size(10);
+    }
+
+    textarea {
+        background-color: palette(gray, light);
+        border: 1px solid palette(gray, mid--light);
+        display: block;
+        font-size: .9rem;
+        font-weight: 400;
+        height: 10rem;
+        margin: size(20) 0;
+        padding: size(15);
+        resize: none;
+        transition: .1s ease-in;
+        width: 100%;
+
+        &:hover {
+            cursor: text;
+        }
+
+        &:focus {
+            background-color: palette(gray, xlight);
+            outline: 0;
+        }
+    }
+
+    .logged-out {
+
+        input {
+            height: 3rem;
+        }
+
+        .captcha {
+            display: block;
+            margin-bottom: size(10);
+        }
+    }
+}
+
+.cos-comments .reply.show-right {
+    right: 0;
+}
+
+.cos-comments--head {
+    background-color: palette(gray, light);
+    padding: size(20) size(20) size(20) 1.25rem;
+
+    a {
+        font-size: .9rem;
+        margin-left: size(10);
+
+        &:first-child {
+            margin-left: 0;
+            margin-right: size(10);
+        }
+    }
+
+    h2 {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .cos-comments--credentials {
+        display: inline-block;
+        float: right;
+    }
+}
+
+
+/* text info for articles in search */
+.cos-comments--comment {
+    border-bottom: 2px solid palette(gray, light);
+    padding: size(20) 0;
+    transition: .25s ease-in;
+
+    i {
+        color: palette(gray, mid--light);
+        margin-top: size(10);
+        transition: .15s ease-in;
+
+        &:hover {
+            color: palette(gray, dark);
+            cursor: pointer;
+        }
+    }
+
+    p {
+        font-size: .9rem;
+        margin-bottom: 0;
+    }
+
+    &.reply-first {
+        margin-left: size(15);
+    }
+
+    &.reply-second {
+        margin-left: size(30);
+    }
+
+    &.reply-third {
+        margin-left: 2.813rem;
+    }
+
+    .active {
+        color: palette(gray, dark);
+    }
+
+    .comment-info {
+        border-bottom: 1px solid palette(gray, mid--light);
+        margin-bottom: size(10);
+
+        i {
+            font-size: .8rem;
+            margin-right: 0;
+        }
+
+        a:hover {
+            color: palette(gray, dark);
+
+            i {
+                color: palette(gray, dark);
+            }
+        }
+    }
+}
+
+.cos-comments--comment {
+
+    .fa-exclamation-circle {
+        float: right;
+    }
+
+    .fa-reply {
+        margin-right: size(15);
+    }
+
+    .fa-thumbs-up {
+        margin-right: size(5);
+    }
+
+    .numbered-likes {
+        color: palette(gray, mid);
+        font-size: .8rem;
+        vertical-align: middle;
+    }
+
+    .posted-on {
+        color: palette(gray, mid--light);
+        float: right;
+        display: inline-block;
+        font-size: .8rem;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: size(5);
+    }
+
+    .username {
+        display: inline-block;
+        font-size: .8rem;
+        font-style: italic;
+        font-weight: 600;
+        margin-bottom: size(5);
+    }
+}
+
+.cos-comments--reply-to-comment {
+    @extend .cos-comments--comment;
+    padding-left: size(20) * 2;
+}

@@ -1,0 +1,17 @@
+// z-index
+$z-layers: (
+    alerts: 100003,
+    modal: 100002,
+    sidebar: 100001,
+    hamburger: 100000,
+    minimal: 1,
+);
+
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}

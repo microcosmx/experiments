@@ -1,0 +1,60 @@
+<div class="cosmo-default sidebar" ng-controller="installationCtrl">
+    <div class="sidebar adminSidebarSlideOut">
+        <div class="bar-top">
+            <h1 translate="install_cosmo"></h1>
+        </div>
+        <div class="bar--actions">
+            <button ng-click="submit()" translate="submit"></button>
+        </div>
+        <div class="form-case">
+            <p class="error" ng-if="!uploadsPermissions" translate="install_error_upload"></p>
+            <p class="error" ng-if="!autoloadPermissions" translate="install_error_autoload"></p>
+            <p class="error" ng-if="!htaccess" translate="install_error_htaccess"></p>
+            <p class="success" ng-if="success" translate="install_complete"></p>
+            <p class="success" ng-if="success" translate="install_view"></p>
+            <p class="error" ng-if="success" translate>
+                install_delete
+            </p>
+            <p class="error" ng-if="error" translate>
+                install_error<br />
+                <p ng-bind-html="error"></p>
+            </p>
+            <h3 translate="install_choose_language"></h3>
+                <input type="radio" value="en" ng-model="install.language">
+                <label for="en" ng-click="changeLanguage('en');install.language='en'">English</label>
+                <input type="radio" value="it" ng-model="install.language">
+                <label for="it" ng-click="changeLanguage('it');install.language='it'">Italiano</label>
+                <input type="radio" value="ru" ng-model="install.language">
+                <label for="ru" ng-click="changeLanguage('ru');install.language='ru'">русский язык</label>
+                <input type="radio" value="pl" ng-model="install.language">
+                <label for="pl" ng-click="changeLanguage('pl');install.language='pl'">polszczyzna</label>
+                <input type="radio" value="th" ng-model="install.language">
+                <label for="th" ng-click="changeLanguage('th');install.language='th'">ภาษาไทย</label>
+            <h3 translate="install_database"></h3>
+                <label translate="install_host"></label>
+                <input type="text" ng-model="install.host" name="host">
+                <label translate="install_database_name"></label>
+                <input type="text" ng-model="install.dbname" name="name">
+                <label translate="username"></label>
+                <input type="text" ng-model="install.username" name="username">
+                <label translate="password"></label>
+                <input type="password" ng-model="install.password" name="password">
+                <label translate="install_database_prefix"></label>
+                <input type="text" ng-model="install.prefix" name="prefix" value="cosmo_">
+            <!-- todo: Add message about modifying the .htaccess files as well -->
+                <label translate="folder"></label>
+                <input type="text" ng-model="install.folder" name="folder" value="">
+            <h3 translate="install_site_info"></h3>
+                <label translate="install_site_title"></label>
+                <input type="text" ng-model="install.title" name="title" value="My Cosmo Site">
+                <label translate="username"></label>
+                <input type="text" ng-model="install.adminUsername" value="admin">
+                <label translate="password"></label>
+                <input type="password" ng-model="install.adminPassword" name="adminPassword">
+                <label translate="confirm_password"></label>
+                <input type="password" ng-model="install.adminPassword2" name="adminPassword2">
+                <label translate="email"></label>
+                <input type="text" ng-model="install.email" name="email" value="admin@example.com">
+        </div>
+    </div>
+</div>

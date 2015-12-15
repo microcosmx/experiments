@@ -1,0 +1,215 @@
+// for dropdowns used in the cosmo WYSIWYG editor
+
+.wysiwyg-dropdown {
+    button {
+        background-color: palette(gray, white);
+        color: palette(blue, dark);
+        display: block;
+        font-family: $font-alpha;
+        outline: none;
+        padding: .5rem;
+        text-align: left;
+        width: 100%;
+
+        &:hover {
+            background-color: palette(gray, light);
+        }
+    }
+
+    .divide {
+        border-bottom: 1px solid palette(gray, mid--light);
+    }
+
+    .wysiwyg-u {
+        font-family: monospace;
+    }
+
+    .wysiwyg-q {
+        font-style: italic;
+    }
+
+    .wysiwyg-c {
+        font-family: monospace;
+    }
+
+    .wysiwyg-h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .wysiwyg-h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .wysiwyg-h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .wysiwyg-h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .wysiwyg-h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .wysiwyg-h6 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+// full length bar for wysiwyg
+.cosmo-toolbar-large {
+    background-color: palette(gray, xlight);
+    border: 0;
+    color: palette(gray, light);
+    cursor: pointer;
+    font-size: .787rem;
+    height: 2.094rem;
+    position: absolute;
+    text-align: center;
+    z-index: z(hamburger);
+
+    td,tr,hr {
+        border: 1px solid palette(blue, mid);
+    }
+
+    i {
+        color: palette(blue, dark);
+        flex: 1;
+        font-size: .813rem;
+        padding: .25rem .5rem;
+        vertical-align: middle;
+
+        &:hover {
+            color: palette(blue, light);
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            flex: 1;
+            padding: 0;
+            border: 0;
+
+            &:after, &:before {
+                display: none;
+            }
+
+            &:hover {
+                background-color: transparent;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            button {
+                background-color: transparent;
+                display: inline-block;
+                height: 2.094rem;
+                margin: 0;
+                outline: none;
+                padding: 0;
+                text-align: center;
+
+                &:hover {
+                    background-color: palette(gray, light);
+
+                    i {
+                        color: palette(blue, light);
+                    }
+                }
+            }
+        }
+
+        .table, .code {
+            display: none;
+
+            @media #{$bp-alpha} {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.table-dropdown--insert {
+    background-color: palette(gray, light);
+    padding: .8rem 2.75rem;
+    width: 11rem;
+
+    p {
+        color: palette(gray, mid);
+        margin: 0;
+    }
+
+    .cell-select {
+        border: 1px solid palette(gray, mid--light);
+        border-radius: 0;
+        display: inline-block;
+        height: .9rem;
+        margin: 0 .156rem .2rem 0;
+        padding: 0;
+        width: .9rem;
+
+        &:hover {
+            background-color: palette(blue, light);
+        }
+
+        &:nth-child(10n) {
+            margin-right: 0;
+        }
+    }
+
+    .cell-select--focus {
+        background-color: palette(blue, light);
+        border: 1px solid palette(gray, mid--light);
+        display: inline-block;
+    }
+}
+
+pre {
+    background-color: darken(palette(blue, mid), 15%);
+    border: 1px solid palette(gray, mid);
+    color: palette(gray, light);
+    font-family: Consolas, Monaco, Lucida Console, Courier New;
+    outline: none;
+}
+
+[contenteditable="false"] {
+    .cosmo-toolbar-large {
+        display: none;
+    }
+}
+
+[contenteditable="true"] {
+    border: 0;
+    min-height: 2rem;
+    outline: 0;
+    transition: outline .1s ease;
+
+    &:hover {
+        outline: 1px solid palette(gray, mid--light);
+    }
+
+    iframe, img, table, video {
+
+        &:hover {
+            outline: 1px solid palette(gray, mid--light);
+        }
+    }
+
+    iframe, img, video {
+        cursor: pointer;
+    }
+}

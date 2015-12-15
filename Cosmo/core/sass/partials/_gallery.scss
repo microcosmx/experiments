@@ -1,0 +1,160 @@
+.file--listed {
+    background-color: palette(gray, light);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+
+    @media #{$bp-alpha} {
+        div {
+            flex: 1;
+        }
+
+        .form-case {
+            flex: 1;
+        }
+    }
+
+    p {
+        overflow: hidden;
+    }
+
+    .bar--actions {
+        background-color: transparent;
+        flex: 0 0 100%;
+        width: 100%;
+
+        button {
+            background-color: palette(gray, light);
+            color: palette(blue, mid);
+
+            &:hover {
+                background-color: palette(gray, mid--light);
+                color: palette(blue, dark);
+            }
+        }
+    }
+
+    .tag {
+        display: block;
+    }
+}
+
+.file--info {
+    flex-wrap: wrap;
+
+    button {
+        flex: 0 0 50%;
+
+        @media #{$bp-alpha} {
+            flex: 1;
+        }
+    }
+}
+
+.file-prev--thumb {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+
+    .thumb {
+        flex: 0 0 49.7%;
+        height: 9rem;
+        overflow: hidden;
+
+        &:nth-child(even) {
+            margin-left: .1rem;
+        }
+
+        @media #{$bp-alpha} {
+            flex: 0 0 33.1%;
+
+            &:nth-child(1n+2) {
+                margin-left: .1rem;
+            }
+
+            &:nth-child(4n) {
+                margin-left: 0;
+            }
+        }
+
+        img {
+            min-height: 9rem;
+            min-width: 100%;
+            width: auto;
+        }
+    }
+}
+
+.file-img--prev {
+    margin-bottom: size(25);
+}
+
+.btn-file--prev {
+    float: left;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+
+    &:hover {
+        background-color: transparent;
+        color: palette(blue, light);
+    }
+}
+
+.btn-file--next {
+    @extend .btn-file--prev;
+    float: right;
+}
+
+input[type='file'] {
+    float: left;
+    height: 20rem;
+    margin: -19rem 0 0 0;
+    opacity: 0;
+    padding: 1.465rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.dropzone {
+    background-color: palette(gray, light);
+    border: 2px dashed palette(gray, mid--light);
+    color: palette(gray, dark);
+    height: 20rem;
+    margin-left: .1rem;
+    text-align: center;
+    transition: all .25s ease;
+
+    &:hover {
+        background-color: palette(blue, light);
+        border: 2px dashed palette(gray, light);
+        color: palette(blue, light);
+
+        h2 {
+            color: palette(gray, light);
+        }
+    }
+
+    &:active {
+      @extend :hover;
+    }
+
+    h2 {
+        color: palette(gray, mid--light);
+        line-height: 17;
+        transition: all .25s ease;
+    }
+}
+
+.ng-file-over {
+    border: 2px dashed palette(blue, light);
+    transition: all .25s ease;
+}
+
+.preview--files {
+    height: 1rem;
+    margin-left: -.5rem;
+}

@@ -1,0 +1,41 @@
+%radio-check {
+    background-color: transparent;
+    border-bottom: size(5) solid transparent;
+    color: palette(blue, mid);
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .01rem;
+    margin-bottom: 1rem;
+    padding: 0 size(10) size(10) size(10);
+    text-transform: uppercase;
+
+    @media #{$bp-alpha} {
+        display: inline-block;
+    }
+
+    &:hover {
+        background-color: transparent;
+        border-bottom: size(5) solid palette(gray, light);
+
+        @media #{$bp-beta} {
+            margin-bottom: .05rem;
+        }
+    }
+}
+
+// hide the round disc and generic check button, we will use just the label as the radio button
+input[type=radio], input[type=checkbox] {
+    display:none;
+}
+
+// change the look of labels that are now covering the input / checkbox button
+input[type=radio] + label, input[type=checkbox] + label {
+    @extend %radio-check;
+}
+
+// change background color for label to make it look selected
+input[type=radio]:checked + label, input[type=radio].active + label, input[type=checkbox]:checked + label {
+    @extend %radio-check;
+    border-bottom: size(5) solid palette(blue, light);
+}

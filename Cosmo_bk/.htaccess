@@ -1,0 +1,52 @@
+<IfModule mod_rewrite.c>
+
+    Options -MultiViews
+
+    # Core
+    RewriteEngine On
+    RewriteBase /workspace/experiments/Cosmo/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !^/workspace/experiments/Cosmo/uploads/
+    RewriteRule ^ index.php [QSA]
+
+    # API
+    RewriteCond %{REQUEST_URI} ^/workspace/experiments/Cosmo/api/
+    RewriteRule ^ core/app/api.php [QSA]
+
+    # HTML snapshots for search engines
+    RewriteCond %{REQUEST_URI}  ^/workspace/experiments/Cosmo/$
+    RewriteCond %{QUERY_STRING} ^_escaped_fragment_=/workspace/experiments/Cosmo/?(.*)$
+    RewriteRule ^(.*)$ /workspace/experiments/Cosmo/core/app/compile.php?url=%1? [NC,L]
+
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 10 days"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType text/plain "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-icon "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(js|css|xml|gz)$">
+        Header append Vary Accept-Encoding
+    </FilesMatch>
+    <FilesMatch "\.(ico|jpe?g|png|gif|swf)$">
+        Header set Cache-Control "public"
+    </FilesMatch>
+    <FilesMatch "\.(css)$">
+        Header set Cache-Control "public"
+    </FilesMatch>
+    <FilesMatch "\.(js)$">
+        Header set Cache-Control "private"
+    </FilesMatch>
+    <FilesMatch "\.(x?html?|php)$">
+        Header set Cache-Control "private, must-revalidate"
+    </FilesMatch>
+</IfModule>

@@ -1,0 +1,53 @@
+.angular-ui-tree {
+    margin-bottom: size(20);
+}
+
+.angular-ui-tree-handle {
+    background: palette(gray, light);
+    border: 0;
+    color: palette(gray, dark);
+    padding: size(10);
+
+    &:hover {
+        background: palette(gray, xlight);
+        color: palette(blue, light);
+        cursor: move;
+    }
+}
+
+.angular-ui-tree-placeholder {
+    background: palette(gray, light);
+    border: 2px dashed palette(blue, light);
+}
+
+
+ol.angular-ui-tree-nodes {
+    margin-bottom: size(5);
+
+    p {
+        display: inline-block;
+        margin: 0;
+    }
+
+    li ol {
+        font-family: $font-alpha;
+        margin-left: size(30);
+
+        .angular-ui-tree-handle {
+            border-top: 0;
+        }
+    }
+}
+
+.menu-manager {
+    float: right;
+    margin-top: .125rem;
+
+    a {
+        margin-right: size(20);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

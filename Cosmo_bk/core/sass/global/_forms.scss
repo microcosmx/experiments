@@ -1,0 +1,116 @@
+@mixin placeholder {
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder { // Firefox 18-
+        @content;
+    }
+
+    &::-moz-placeholder {  // Firefox 19+
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+input {
+	@include placeholder {
+		color: palette(gray, mid);
+	}
+
+	background-color: palette(gray, light);
+	border: 0;
+	box-sizing: border-box;
+	color: palette(gray, mid);
+	display: inline-block;
+	font-family: $font-alpha;
+    font-size: .9rem;
+	height: 3rem;
+	margin-bottom: 1.5rem;
+	outline: none;
+	padding: .56rem;
+	transition: .15s ease-in;
+	width: 100%;
+
+	&:focus {
+        @include placeholder {
+            opacity: 0;
+        }
+
+		background-color: palette(gray, xlight);
+		color: palette(gray, dark);
+	}
+}
+
+textarea {
+	@extend input;
+    font-size: .9rem;
+	line-height: 1.5;
+	min-height: 9rem;
+	resize: vertical;
+}
+
+ label {
+	color: palette(gray, dark);
+	display: block;
+	font-family: $font-alpha;
+	font-size: .85rem;
+	font-weight: 200;
+	margin-top: 0;
+}
+
+// number count for things like titles, descriptions etc...
+.num-count {
+	color: palette(blue, light);
+	font-size: .85rem;
+	font-weight: 400;
+	float: right;
+}
+
+// modified select style dropdown wrap standard <select> with <div class="cos-select"> to add the style
+.cos-select {
+	background: url(../img/arrows.svg) no-repeat transparent right;
+	background-color: palette(gray, light);
+	background-size: 2.25rem size(15);
+	box-sizing: border-box;
+	color: palette(gray, dark);
+	cursor: pointer;
+	font-family: $font-alpha;
+	font-weight: 200;
+	height: 3rem;
+	margin-bottom: 1.5rem;
+	outline: none;
+	padding-left: .838rem;
+	width: 100%;
+
+	select {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		background: none;
+		border: 0;
+		cursor: pointer;
+		height: 3rem;
+		outline: 0;
+		padding-left: 0;
+		width: 100%;
+	}
+}
+
+.cos-select--half-width {
+	@extend .cos-select;
+
+	@media #{$bp-beta} {
+		display: inline-block;
+		vertical-align: top;
+		width: 48.98%;
+
+		&:nth-child(odd) {
+			margin-right: 1%;
+		}
+	}
+}
