@@ -114,7 +114,8 @@ $minifyScripts .= FOLDER."core/js/3rd-party/diff_match_patch.js,";
 $minifyScripts .= FOLDER."core/js/3rd-party/angular-ui-tree.min.js";
 
 
-$minifyCSS .= FOLDER."core/css/cosmo-default-style.minify.css";
+$minifyCSS .= FOLDER."core/css/cosmo-default-style.minify.css,";
+$minifyCSS .= FOLDER."core/css/cosmo-app.css";
 
 
 // Load menus
