@@ -10,7 +10,7 @@ session_start();
 $angularModules = '';
 $directives = array();
 $classes = '';
-$minifyScripts = 'min/?f=';
+$minifyScripts = ''; //min/?f=';
 $minifyCSS = 'min/?f=';
 $scripts = '';
 $CSS = '';

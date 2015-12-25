@@ -44,7 +44,16 @@
 
         <base href="/<?php echo FOLDER; ?>" />
 
-        <script src="<?php echo $minifyScripts; ?>"></script>
+        <!--script src="<?php echo $minifyScripts; ?>"></script-->
+
+        <?php 
+            $js_array = split(',', $minifyScripts);
+            foreach ($js_array as &$value) {
+        ?>
+                <script src="<?php echo $value; ?>"></script>
+        <?php
+            }
+        ?>
 
         <link rel="stylesheet" type="text/css" href="<?php echo $minifyCSS; ?>">
 
