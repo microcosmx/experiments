@@ -29,12 +29,17 @@
             <div cs-logo></div>
         </div>
 
-        <div class="nav-toggle">
+        <div class="nav-toggle" ng-controller="onlineCtrl">
             <a class="social" href="#"><i class="fa fa-facebook"></i></a>
             <a class="social" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="social" >
+        	<!--添加一个切换online offline的按钮-->
+                <button type="button" id="OnlineOffline" ng-init="content.online=true"  ng-click="toggle()">{{button}}</button>
+        	</a>
             <a ng-click="page.expandMenu=!page.expandMenu"><span>MENU</span><i class="fa fa-bars"></i></a>
         </div>
     </div>
+
 
 
 

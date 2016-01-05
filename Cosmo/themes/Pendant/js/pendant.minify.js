@@ -17,6 +17,12 @@ angular.module('pendant', [])
     $scope.scrollingUp = true;
     $scope.panel = 'menu';
     
+    //broadcast the network status changed online to offline or reverse
+    $scope.$on("networkStatusChange",
+    		   function (event, msg) {
+    		        $scope.$broadcast("networkStatusChangeFromParrent", msg);
+    		    });
+    
     // Make the header fixed when scrolling up
     angular.element(window).on('scroll', function(){
         var docOffset = document.documentElement.scrollTop||document.body.scrollTop;

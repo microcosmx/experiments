@@ -55,6 +55,7 @@ $minifyScripts .= FOLDER."core/js/admin-panel/files.js,";
 $minifyScripts .= FOLDER."core/js/admin-panel/login-registration.js,";
 $minifyScripts .= FOLDER."core/js/admin-panel/menu.js,";
 $minifyScripts .= FOLDER."core/js/admin-panel/module.js,";
+$minifyScripts .= FOLDER."core/js/admin-panel/online.js,";
 $minifyScripts .= FOLDER."core/js/admin-panel/page.js,";
 $minifyScripts .= FOLDER."core/js/admin-panel/profile.js,";
 $minifyScripts .= FOLDER."core/js/admin-panel/reset-password.js,";
